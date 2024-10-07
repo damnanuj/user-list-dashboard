@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext } from "react";
 import "./FilterComponent.scss";
 import filterIcon from "../../assests/filters-icon.png";
 import { Dropdown, Checkbox, Collapse } from "antd";
+import { TeachersContext } from "../../context/TeachersContext";
 
 const { Panel } = Collapse;
 
 const FilterComponent = () => {
-  const [selectedDepartment, setSelectedDepartment] = useState([]);
-  const [selectedStatus, setSelectedStatus] = useState([]);
+
+  //needed functions from context
+  const {
+    selectedDepartment,
+    setSelectedDepartment,
+    selectedStatus,
+    setSelectedStatus,
+  } = useContext(TeachersContext);
 
   const filters = {
     Department: ["All", "Finance", "Engineer", "Art"],
@@ -16,14 +23,12 @@ const FilterComponent = () => {
 
   // department filter
   const handleDepartmentChange = (checkedValues) => {
-    setSelectedDepartment(checkedValues);
-    console.log(checkedValues); 
+    setSelectedDepartment(checkedValues); // Update context
   };
 
   // status filter
   const handleStatusChange = (checkedValues) => {
-    setSelectedStatus(checkedValues);
-    console.log(checkedValues); 
+    setSelectedStatus(checkedValues); // Update context
   };
 
   const renderFilterCheckboxes = (
@@ -42,7 +47,7 @@ const FilterComponent = () => {
     </Checkbox.Group>
   );
 
-  // Filter dropdown menu>>>>>>>>>>>>>
+  // Filter dropdown menu
   const menu = (
     <div className="dropdown-content">
       <Collapse bordered={false} defaultActiveKey={["1"]}>
@@ -72,6 +77,6 @@ const FilterComponent = () => {
       <img src={filterIcon} alt="filter_icon" className="filter_icon" />
     </Dropdown>
   );
-}
+};
 
 export default FilterComponent;

@@ -359,46 +359,7 @@ export const teachersData = [
     studentCount: 15,
     status: "Active",
   },
-  {
-    recordId: 37,
-    teacher: {
-      name: "Rachel Stewart",
-      id: 10037,
-      department: "Finance",
-    },
-    studentCount: 17,
-    status: "Suspended",
-  },
-  {
-    recordId: 38,
-    teacher: {
-      name: "Jason Sanchez",
-      id: 10038,
-      department: "Engineering",
-    },
-    studentCount: 14,
-    status: "Blocked",
-  },
-  {
-    recordId: 39,
-    teacher: {
-      name: "Kimberly Morris",
-      id: 10039,
-      department: "Arts",
-    },
-    studentCount: 23,
-    status: "Active",
-  },
-  {
-    recordId: 40,
-    teacher: {
-      name: "Matthew Rivera",
-      id: 10040,
-      department: "Finance",
-    },
-    studentCount: 25,
-    status: "Inactive",
-  },
+  
   // {
   //   recordId: 41,
   //   teacher: {

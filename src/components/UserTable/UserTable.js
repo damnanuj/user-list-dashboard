@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./UserTable.scss";
 import { Link } from "react-router-dom";
+import { TeachersContext } from "../../context/TeachersContext";
 
 const statusClasses = {
   Active: "status-active",
@@ -9,7 +10,11 @@ const statusClasses = {
   Suspended: "status-suspended",
 };
 
-const UserTable = ({ teachers }) => { //==>>all teahers array
+const UserTable = () => { 
+
+const {paginatedTeachers} = useContext(TeachersContext)
+  const teachersArray = paginatedTeachers   //==>>allFilterd teahers ARray
+
   return (
     <div className="userTable_container">
       <div className="teacher-table-container">
@@ -26,7 +31,7 @@ const UserTable = ({ teachers }) => { //==>>all teahers array
             </tr>
           </thead>
           <tbody>
-            {teachers.map((item) => (
+            {teachersArray.map((item) => (
               <tr key={item.recordId}>
                 <td data-label="Record ID">{item.recordId}</td>
                 <td data-label="Teacher Name">{item.teacher.name}</td>

@@ -7,6 +7,7 @@ const SearchBar = () => {
   const { searchString, setSearchString } = useContext(TeachersContext);
 
   const handleSearchChange = (e) => {
+    console.log(e.target.value);
     setSearchString(e.target.value);
   };
 
