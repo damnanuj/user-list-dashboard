@@ -1,0 +1,35 @@
+@import "../../../styles/colors";
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .welcome {
+    color: $secondary-text-color;
+    font-size: 18px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      width: 45px;
+    }
+    img:first-child {
+      width: 30px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .header_container {
+    padding-left: 3rem;
+
+    .welcome {
+      font-size: 28px;
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@import "../../styles/colors";
+
+.sideNavs_container {
+  background-color: $primary-color-blue;
+  position: absolute;
+  width: 65%;
+  padding: 1rem 0 1rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  color: $text-color-white;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.55);
+  &.closed {
+    width: 0%;
+    padding-left: 0;
+  }
+
+  &.open {
+    width: 65%;
+  }
+
+  .top_logo_menuBtn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    .company_logo {
+      width: 50px;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  /* Navigation Links */
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    position: relative;
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      width: 100%;
+      text-decoration: none;
+      transition: 0.3s ease;
+      // position: relative;
+
+      // ================Inverted radius
+      // &::after, &::before{
+      //   content: '';
+      //   position: absolute;
+      //   width: 20px;
+      //   height: 40px;
+      //   top: -40px;
+      //   right: 0;
+      //   background: #ffffff;
+      //   border-radius: 0 0 25px 0;
+      //   z-index: -1;
+
+      // }
+      // &::before{
+      //   top: auto;
+      //   bottom: -40px;
+
+      //   border-radius: 0 25px 0 0;
+      // }
+      // p.active{
+      //   .nav::after{
+      //     box-shadow: 0 25px 0 0 #ffffff;
+      //   }
+      //   .nav::before{
+      //     box-shadow: 0 -25px 0 0 #ffffff;
+      //   }
+      // }
+
+      img {
+        padding: 0.8rem;
+        border-radius: 50%;
+       
+        width: 50px;
+        height: 50px;
+
+      }
+
+      p {
+        color: $text-color-white;
+        font-size: 18px;
+        padding: 1rem;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 1;
+        
+      }
+      &.active_nav{
+        img,p{
+          background-color: $primary-background-color;
+          color: $text-color;
+        }
+      }
+      &:not(.active_nav):hover {
+        transform: scale(1.05);
+        img, p {
+          background-color: #ffffff27;
+        }
+      }
+    }
+  }
+}
+
+/*======>> menu Toggle button */
+.toggleNavBtn {
+  position: absolute;
+  top: 6%;
+  left: 65%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: $primary-color-blue;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 30px !important;
+  color: white;
+  cursor: pointer;
+  z-index: 100;
+  transition: left 0.4s ease;
+
+  .sideNavs_container.closed + & {
+    left: 1rem;
+    border-radius: 10px;
+  }
+  &.close {
+    background-color: $text-color-white !important;
+  }
+  &:hover {
+    background-color: darken($primary-color-blue, 10%);
+  }
+}
+
+/*================== Media Queries ==================================*/
+
+/* For desktops and larger screens */
+@media (min-width: 1024px) {
+  .sideNavs_container {
+    padding: 2rem 0rem 2rem 2rem;
+    transition: all 0.3s ease;
+    position: static;
+    height: 100%;
+    
+    &.closed {
+      width: 105px;
+      padding-left: 2rem;
+    }
+
+    &.open {
+      width: 260px;
+    }
+
+    .top_logo_menuBtn {
+      .company_logo {
+        width: 50px;
+      }
+    }
+
+    .navLinks {
+      .nav {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .toggleNavBtn {
+    top: 9%;
+    left: 260px;
+    .sideNavs_container.closed + & {
+      left: 105px;
+    }
+  }
+}
+
+/* For large desktops */
+@media (min-width: 1440px) {
+  .sideNavs_container {
+    width: 700px;
+    padding: 3rem 0rem 3rem 5rem;
+
+    .navLinks {
+      gap: 2rem;
+      .nav {
+        img {
+          width: 70px;
+          height: 70px;
+        }
+
+        p {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .toggleNavBtn {
+    left: 700px;
+    .sideNavs_container.closed + & {
+      left: 105px;
+    }
+  }
+}

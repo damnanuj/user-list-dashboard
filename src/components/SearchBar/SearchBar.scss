@@ -1,0 +1,50 @@
+@import "../../styles/colors";
+
+.searchBar_container {
+  width: 100%;
+  height: fit-content;
+
+  .search_filter {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    input {
+      padding: 12px 20px;
+      width: 280px;
+      border-radius: 10px;
+      outline: none;
+      border: 1px solid $border-color;
+      color: $secondary-text-color;
+
+      &:focus {
+        border: 1.2px solid $primary-color-blue;
+      }
+    }
+
+    .filter_icon {
+      width: 40px;
+      background-color:$primary-color-blue ;
+      padding: 0.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover{
+        background-color: $secondary-text-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .search_filter {
+    margin: 0.5rem 0 0 0 !important;
+
+    input {
+      padding: 12px 20px !important;
+      width: 700px !important;
+    }
+  }
+}

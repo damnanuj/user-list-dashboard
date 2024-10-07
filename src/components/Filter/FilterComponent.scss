@@ -1,0 +1,25 @@
+@import "../../styles/colors";
+
+
+
+  .dropdown-content {
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    .ant-collapse-header {
+      font-weight: bold;
+      color: $secondary-text-color !important;
+    }
+    .ant-checkbox-group{
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px;
+    }
+    
+    .ant-checkbox-group-item {
+      margin: 0.5rem 0;
+    }
+  }
