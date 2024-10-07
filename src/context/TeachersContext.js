@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { teachersData } from "../data/teachersData";
+import myDebounce from "../hooks/useDebounce";
 
 // Create Context
 export const TeachersContext = createContext();
@@ -17,6 +18,12 @@ export const TeachersProvider = ({ children }) => {
     setTeachers(teachersData);
   }, []);
 
+   //=======>> Debounced search update
+   const debouncedSearch = myDebounce((value) => {
+    console.log(value);  //====>>debounce working change the ms to see
+    setSearchString(value);
+  }, 500);  
+
   // Filter teachers based on requirment
   useEffect(() => {
     let filtered = teachers;
@@ -28,6 +35,7 @@ export const TeachersProvider = ({ children }) => {
       );
     }
 
+   
     //========>> Filter by department
     if (selectedDepartment.length > 0 && !selectedDepartment.includes("All")) {
       filtered = filtered.filter((teacher) =>
@@ -54,6 +62,7 @@ export const TeachersProvider = ({ children }) => {
     <TeachersContext.Provider
       value={{
         teachers,
+        debouncedSearch,
         searchString,
         setSearchString,
         filteredTeachers,

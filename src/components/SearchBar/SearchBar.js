@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./SearchBar.scss";
 import FilterComponent from "../Filter/FilterComponent";
 import { TeachersContext } from "../../context/TeachersContext";
 
 const SearchBar = () => {
-  const { searchString, setSearchString } = useContext(TeachersContext);
+  const { debouncedSearch } = useContext(TeachersContext);
+  const [inputValue, setInputValue] = useState(""); 
 
-  const handleSearchChange = (e) => {
-    console.log(e.target.value);
-    setSearchString(e.target.value);
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value); //just local state to faster inputand change
+    debouncedSearch(value); 
   };
 
   return (
@@ -17,10 +19,10 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search..."
-          value={searchString}
-          onChange={handleSearchChange}
+          value={inputValue} 
+          onChange={handleInputChange} 
         />
-        <FilterComponent/>
+        <FilterComponent />
       </div>
     </div>
   );

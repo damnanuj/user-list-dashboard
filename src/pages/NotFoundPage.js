@@ -1,5 +1,5 @@
 import React from "react";
-import oops404 from "../../assests/oops-404.jpg";
+import oops404 from "../assests/oops-404.jpg";
 
 const NotFound = () => {
   return (

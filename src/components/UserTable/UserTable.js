@@ -45,7 +45,7 @@ const {paginatedTeachers} = useContext(TeachersContext)
                   </span>
                 </td>
                 <td data-label="All Details">
-                  <Link to="/" className="view-more">
+                  <Link to="/teacher/teacher-Id" className="view-more">
                     View More &gt;
                   </Link>
                 </td>

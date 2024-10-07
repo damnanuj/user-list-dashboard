@@ -201,31 +201,31 @@
   }
 }
 
-/* For large desktops */
-@media (min-width: 1440px) {
-  .sideNavs_container {
-    width: 700px;
-    padding: 3rem 0rem 3rem 5rem;
+// /* For large desktops */
+// @media (min-width: 1440px) {
+//   .sideNavs_container {
+//     width: 700px;
+//     padding: 3rem 0rem 3rem 5rem;
 
-    .navLinks {
-      gap: 2rem;
-      .nav {
-        img {
-          width: 70px;
-          height: 70px;
-        }
+//     .navLinks {
+//       gap: 2rem;
+//       .nav {
+//         img {
+//           width: 70px;
+//           height: 70px;
+//         }
 
-        p {
-          font-size: 30px;
-        }
-      }
-    }
-  }
+//         p {
+//           font-size: 30px;
+//         }
+//       }
+//     }
+//   }
 
-  .toggleNavBtn {
-    left: 700px;
-    .sideNavs_container.closed + & {
-      left: 105px;
-    }
-  }
-}
+//   .toggleNavBtn {
+//     left: 700px;
+//     .sideNavs_container.closed + & {
+//       left: 105px;
+//     }
+//   }
+// }

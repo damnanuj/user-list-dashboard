@@ -8,7 +8,7 @@ import { TeachersProvider } from "./context/TeachersContext";
 
 //================== Lazy pages Imports====================
 const UserListPage = lazy(() => import("./pages/UserListPage"));
-const NotFound = lazy(() => import("./pages/NotFound404/NotFoundPage"));
+const NotFound = lazy(() => import("./pages/NotFoundPage"));
 
 // ===========Lazy Loading wrapper=============
 const LazyLoadingWrapper = ({ Component }) => {
