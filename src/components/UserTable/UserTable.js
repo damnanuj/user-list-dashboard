@@ -10,10 +10,9 @@ export const statusClasses = {
   Suspended: "status-suspended",
 };
 
-const UserTable = () => { 
-
-const {paginatedTeachers} = useContext(TeachersContext)
-  const teachersArray = paginatedTeachers   //==>>allFilterd teahers ARray
+const UserTable = () => {
+  const { paginatedTeachers } = useContext(TeachersContext);
+  const teachersArray = paginatedTeachers; //==>>allFilterd teahers ARray
 
   return (
     <div className="userTable_container">
@@ -31,26 +30,33 @@ const {paginatedTeachers} = useContext(TeachersContext)
             </tr>
           </thead>
           <tbody>
-            {teachersArray.map((item) => (
-              <tr key={item.recordId}>
-                <td data-label="Record ID">{item.recordId}</td>
-                <td data-label="Teacher Name">{item.teacher.name}</td>
-                <td data-label="Teacher Id.">{item.teacher.id}</td>
-                <td data-label="Department">{item.teacher.department}</td>
-                <td data-label="Student">{item.studentCount}</td>
-                <td data-label="Status" className={statusClasses[item.status]}>
-                  {item.status}
-                  <span className="material-icons status_circle">
-                    radio_button_checked
-                  </span>
-                </td>
-                <td data-label="All Details">
-                  <Link to="/teacher/teacher-Id" className="view-more">
-                    View More &gt;
-                  </Link>
-                </td>
-              </tr>
-            ))}
+            {teachersArray.length === 0 ? (
+              <div style={{textAlign:"center", color:"red"}}>No data found...</div>
+            ) : (
+              teachersArray.map((item) => (
+                <tr key={item.recordId}>
+                  <td data-label="Record ID">{item.recordId}</td>
+                  <td data-label="Teacher Name">{item.teacher.name}</td>
+                  <td data-label="Teacher Id.">{item.teacher.id}</td>
+                  <td data-label="Department">{item.teacher.department}</td>
+                  <td data-label="Student">{item.studentCount}</td>
+                  <td
+                    data-label="Status"
+                    className={statusClasses[item.status]}
+                  >
+                    {item.status}
+                    <span className="material-icons status_circle">
+                      radio_button_checked
+                    </span>
+                  </td>
+                  <td data-label="All Details">
+                    <Link to="/teacher/teacher-Id" className="view-more">
+                      View More &gt;
+                    </Link>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
