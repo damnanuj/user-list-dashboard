@@ -17,7 +17,7 @@ const FilterComponent = () => {
   } = useContext(TeachersContext);
 
   const filters = {
-    Department: ["All", "Finance", "Engineer", "Art"],
+    Department: ["All", "Finance", "Engineer", "Arts"],
     Status: ["All", "Active", "Inactive", "Blocked", "Suspended"],
   };
 

@@ -3,7 +3,7 @@ import "./UserTable.scss";
 import { Link } from "react-router-dom";
 import { TeachersContext } from "../../context/TeachersContext";
 
-const statusClasses = {
+export const statusClasses = {
   Active: "status-active",
   Inactive: "status-inactive",
   Blocked: "status-blocked",

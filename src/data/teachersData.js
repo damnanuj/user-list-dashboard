@@ -14,7 +14,7 @@ export const teachersData = [
     teacher: {
       name: "Robert Smith",
       id: 10002,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 30,
     status: "Inactive",
@@ -44,7 +44,7 @@ export const teachersData = [
     teacher: {
       name: "Patricia Taylor",
       id: 10005,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 20,
     status: "Active",
@@ -74,7 +74,7 @@ export const teachersData = [
     teacher: {
       name: "Michael Martinez",
       id: 10008,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 27,
     status: "Suspended",
@@ -104,7 +104,7 @@ export const teachersData = [
     teacher: {
       name: "Susan Thomas",
       id: 10011,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 29,
     status: "Inactive",
@@ -134,7 +134,7 @@ export const teachersData = [
     teacher: {
       name: "Daniel Harris",
       id: 10014,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 34,
     status: "Blocked",
@@ -164,7 +164,7 @@ export const teachersData = [
     teacher: {
       name: "Angela Robinson",
       id: 10017,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 15,
     status: "Suspended",
@@ -194,7 +194,7 @@ export const teachersData = [
     teacher: {
       name: "Joshua King",
       id: 10020,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 26,
     status: "Inactive",
@@ -224,7 +224,7 @@ export const teachersData = [
     teacher: {
       name: "Nancy Green",
       id: 10023,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 14,
     status: "Blocked",
@@ -254,7 +254,7 @@ export const teachersData = [
     teacher: {
       name: "Charles Carter",
       id: 10026,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 22,
     status: "Active",
@@ -284,7 +284,7 @@ export const teachersData = [
     teacher: {
       name: "Laura Roberts",
       id: 10029,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 19,
     status: "Active",
@@ -314,7 +314,7 @@ export const teachersData = [
     teacher: {
       name: "Ethan Campbell",
       id: 10032,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 27,
     status: "Suspended",
@@ -344,7 +344,7 @@ export const teachersData = [
     teacher: {
       name: "Brittany Edwards",
       id: 10035,
-      department: "Engineering",
+      department: "Engineer",
     },
     studentCount: 29,
     status: "Inactive",
@@ -365,7 +365,7 @@ export const teachersData = [
   //   teacher: {
   //     name: "Angela Cooper",
   //     id: 10041,
-  //     department: "Engineering",
+  //     department: "Engineer",
   //   },
   //   studentCount: 30,
   //   status: "Active",
@@ -395,7 +395,7 @@ export const teachersData = [
   //   teacher: {
   //     name: "Christopher Bell",
   //     id: 10044,
-  //     department: "Engineering",
+  //     department: "Engineer",
   //   },
   //   studentCount: 33,
   //   status: "Active",
@@ -425,7 +425,7 @@ export const teachersData = [
   //   teacher: {
   //     name: "Evelyn Young",
   //     id: 10047,
-  //     department: "Engineering",
+  //     department: "Engineer",
   //   },
   //   studentCount: 16,
   //   status: "Suspended",
@@ -456,7 +456,7 @@ export const teachersData = [
   //   teacher: {
   //     name: "Clara Wright",
   //     id: 10050,
-  //     department: "Engineering",
+  //     department: "Engineer",
   //   },
   //   studentCount: 18,
   //   status: "Inactive",
