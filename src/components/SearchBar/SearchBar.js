@@ -4,10 +4,10 @@ import FilterComponent from "../Filter/FilterComponent";
 import { TeachersContext } from "../../context/TeachersContext";
 
 const SearchBar = () => {
-  const { searchTerm, setSearchTerm } = useContext(TeachersContext);
+  const { searchString, setSearchString } = useContext(TeachersContext);
 
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
+    setSearchString(e.target.value);
   };
 
   return (
@@ -16,7 +16,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search..."
-          value={searchTerm}
+          value={searchString}
           onChange={handleSearchChange}
         />
         <FilterComponent/>
