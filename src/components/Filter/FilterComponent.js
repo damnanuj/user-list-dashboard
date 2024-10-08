@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import "./FilterComponent.scss";
 import filterIcon from "../../assests/filters-icon.png";
-import { Dropdown, Checkbox, Collapse } from "antd";
+import { Dropdown, Checkbox, Collapse, Button } from "antd";
 import { TeachersContext } from "../../context/TeachersContext";
 
 const { Panel } = Collapse;
 
 const FilterComponent = () => {
-
   //needed functions from context
   const {
     selectedDepartment,
@@ -23,12 +22,18 @@ const FilterComponent = () => {
 
   // department filter
   const handleDepartmentChange = (checkedValues) => {
-    setSelectedDepartment(checkedValues); // Update context
+    setSelectedDepartment(checkedValues); 
   };
 
   // status filter
   const handleStatusChange = (checkedValues) => {
-    setSelectedStatus(checkedValues); // Update context
+    setSelectedStatus(checkedValues); 
+  };
+
+  // reset all filters
+  const resetFilters = () => {
+    setSelectedDepartment([]); //=> Reset to initital emptyy
+    setSelectedStatus([]);
   };
 
   const renderFilterCheckboxes = (
@@ -47,7 +52,13 @@ const FilterComponent = () => {
     </Checkbox.Group>
   );
 
-  // Filter dropdown menu
+  //conditionally showing reset button======>>>>
+  const isAnyFilterApplied =
+    selectedDepartment.length > 0 ||
+    selectedStatus.length > 0  
+    ;
+
+  // Filter dropdown menu<=========>
   const menu = (
     <div className="dropdown-content">
       <Collapse bordered={false} defaultActiveKey={["1"]}>
@@ -69,6 +80,12 @@ const FilterComponent = () => {
           )}
         </Panel>
       </Collapse>
+      {/* >>==========Reset Button ==========>>*/}
+      {isAnyFilterApplied && (
+        <Button type="link" className="reset-button" onClick={resetFilters}>
+          Reset Filters
+        </Button>
+      )}
     </div>
   );
 

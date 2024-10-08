@@ -11,7 +11,7 @@ export const TeachersProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [selectedDepartment, setSelectedDepartment] = useState([]); //Department
-  const [selectedStatus, setSelectedStatus] = useState([]); // Status
+  const [selectedStatus, setSelectedStatus] = useState([]); // Status initial none seleced
 
   // initially mounting render
   useEffect(() => {
